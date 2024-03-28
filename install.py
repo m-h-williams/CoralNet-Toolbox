@@ -111,17 +111,22 @@ install_requires = [
     'albumentations',
     'plyfile',
 
+    # CoralNet
     'Requests',
     'beautifulsoup4',
-
     'selenium',
     'webdriver_manager',
 
+    # Local Training
+    'tensorboard',
     'simclr',
     'torcheval',
     'segment_anything',
     'segmentation_models_pytorch',
-
+    'ultralytics',
+    'supervision',
+    
+    # GUI
     'gradio',
 ]
 

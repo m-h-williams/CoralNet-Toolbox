@@ -31,6 +31,9 @@ a GUI; these scripts currently include the following:
 - `Classification`: Create your own patch-based image classifier, locally
 - `Classification Inf.`: Perform inference using a locally trained classification model
 - `Classification Demo`: Demo your trained model locally
+- `Classification Ultralytics`: Create your own patch-based image classifier using Ultralytics, locally
+- `Classification Ultralytics Inf.`: Perform inference using a locally trained Ultralytics classification model
+- `Classification Ultralytics Demo`: Demo your Ultralytics trained model locally
 - `Annotate`: Create your own patches from annotations, locally
 - `Visualize`: Visualize points/patches superimposed on images
 - `Patches`: Extract patches from images given an annotation file
