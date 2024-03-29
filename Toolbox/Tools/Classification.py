@@ -1209,12 +1209,8 @@ def main():
     parser.add_argument('--encoder_name', type=str, default='efficientnet-b0',
                         help='The convolutional encoder to fine-tune; pretrained on Imagenet')
 
-    parser.add_argument('--freeze_encoder', type=float, default=0.0)
-
-    parser.add_argument('--encoder_name', type=str, default='efficientnet-b0',
-                        help='The convolutional encoder to fine-tune; pretrained on Imagenet')
-
     parser.add_argument('--freeze_encoder', type=float,
+                        default=0.0,
                         help='Freeze N% of the encoder [0 - 1]')
 
     parser.add_argument('--loss_function', type=str, default='CrossEntropyLoss',
@@ -1248,7 +1244,7 @@ def main():
                         help='Display training on Tensorboard')
 
     parser.add_argument('--output_dir', type=str, required=True,
-                        help='Directory to save updated label csv file.')
+                        help='Directory to save results.')
 
     args = parser.parse_args()
 

@@ -211,8 +211,8 @@ def main():
     parser.add_argument('--image_dir', type=str, required=True,
                         help='Directory with images associated with annotation file')
 
-    parser.add_argument('--annotation_file', type=str, nargs="+", default=[],
-                        help='The path to annotation file(s); expects CoralNet format')
+    parser.add_argument('--annotation_file', type=str,
+                        help='The path to annotation file; expects CoralNet format')
 
     parser.add_argument("--image_column", type=str, default="Name",
                         help="The column specifying the image basename")

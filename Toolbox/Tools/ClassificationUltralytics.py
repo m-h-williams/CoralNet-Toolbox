@@ -37,7 +37,7 @@ def get_classifier_encoders():
     Lists all the models available
     """
 
-    return [f"yolo8{_}-cls.pt" for _ in ['n', 's', 'm', 'l', 'x']]
+    return [f"yolo8{_}-cls" for _ in ['n', 's', 'm', 'l', 'x']]
 
 
 def compute_class_weights(df, mu=0.15):
@@ -86,8 +86,6 @@ def classification(args):
     # ------------------------------------------------------------------------------------------------------------------
     # Check input data
     # ------------------------------------------------------------------------------------------------------------------
-    # TODO this will likely need to be modified as the user is bringing in data from Classifier Widget
-    #   Make this into a function that converts multiple CSV files and patch datasets into a .yaml file
 
     # If the user provides multiple patch dataframes
     patches_df = pd.DataFrame()
@@ -301,15 +299,11 @@ def main():
     parser.add_argument('--pre_trained_path', type=str, default=None,
                         help='Path to pre-trained model of the same architecture')
 
-    parser.add_argument('--encoder_name', type=str, default='efficientnet-b0',
-                        help='The convolutional encoder to fine-tune; pretrained on Imagenet')
-
-    parser.add_argument('--freeze_encoder', type=float, default=0.0)
-
-    parser.add_argument('--encoder_name', type=str, default='efficientnet-b0',
+    parser.add_argument('--encoder_name', type=str, default='yolov8n-cls',
                         help='The convolutional encoder to fine-tune; pretrained on Imagenet')
 
     parser.add_argument('--freeze_encoder', type=float,
+                        default=0.0,
                         help='Freeze N% of the encoder [0 - 1]')
 
     parser.add_argument('--loss_function', type=str, default='CrossEntropyLoss',
@@ -343,7 +337,7 @@ def main():
                         help='Display training on Tensorboard')
 
     parser.add_argument('--output_dir', type=str, required=True,
-                        help='Directory to save updated label csv file.')
+                        help='Directory to save results')
 
     args = parser.parse_args()
 
